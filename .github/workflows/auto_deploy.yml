@@ -1,20 +1,21 @@
-name: Deploy to Local
+name: Chatbot Workflow
 
 on:
   push:
     branches:
-      - main 
+      - main
 
 jobs:
-  deploy:
+  build:
     runs-on: self-hosted
-
+    
     steps:
-      - name: Checkout Repository
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      
+      - name: Set up environment
+        env:
+          API_KEY: ${{ secrets.API_KEY }} # Set the API_KEY secret as an environment variable
 
-
-      - name: Deploy to Local
-        run: cp -r pet-food-store C:\laragon\www\
+      - name: secret_key
+        run: setx API_KEY ${{ secrets.API_KEY }}
