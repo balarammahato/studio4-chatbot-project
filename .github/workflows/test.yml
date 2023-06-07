@@ -1,0 +1,21 @@
+name: test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: self-hosted
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up environment
+        env:
+          API_KEY: ${{ secrets.API_KEY }} # Set the API_KEY secret as an environment variable
+
+      - name: secret_key
+        run: setx API_KEY ${{ secrets.API_KEY }}
