@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $apiKey = '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'; // Replace with your actual OpenAI API key
+    $apiKey = $_ENV['API_KEY']; // Replace with your actual OpenAI API key
     $endpoint = 'https://api.openai.com/v1/chat/completions';
     $model = 'gpt-3.5-turbo';
 
