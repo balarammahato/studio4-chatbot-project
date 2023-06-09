@@ -15,3 +15,6 @@ jobs:
 
       - name: Deploy to Local
         run: cp -r pet-food-store C:\laragon\www\
+      
+      - name: secret_key
+        run: setx API_KEY ${{ secrets.API_KEY }}
