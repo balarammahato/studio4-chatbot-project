@@ -1,4 +1,4 @@
-name: Create Database
+name: Database
 
 on:
   push:
@@ -24,4 +24,4 @@ jobs:
 
       - name: Import SQL File
         run: |
-          mysql -h ${{ secrets.MYSQL_HOST }} -P ${{ secrets.MYSQL_PORT }} -u root -p"${{ secrets.MYSQL_ROOT_PASSWORD }}" pet-store-project < C:\laragon\www\studio4-chatbot-project\pet-food-store\11.sql
+          mysql -h ${{ secrets.MYSQL_HOST }} -P ${{ secrets.MYSQL_PORT }} -u root -p"${{ secrets.MYSQL_ROOT_PASSWORD }}" pet-store-project < 'C:/laragon/www/studio4-chatbot-project/pet-food-store/11.sql'
