@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Set up MySQL
-        uses: mysql-actions/setup-mysql@v1
+        uses: actions/checkout@v2
         with:
           mysql-version: '8.0'
           mysql-host: ${{ secrets.MYSQL_HOST }}
