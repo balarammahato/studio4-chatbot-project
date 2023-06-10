@@ -15,7 +15,7 @@ jobs:
 
       - name: Create Database
         run: |
-          "C:\Program Files\MySQL\MySQL Server\bin\mysql.exe" -h localhost -P 3306 -u root -12345 -e "CREATE DATABASE pet-store-project;"
+          "C:\Program Files\MySQL\MySQL Server\bin\mysql.exe" --host=localhost --port=3306 --user=root --password=12345 -e "CREATE DATABASE pet-store-project;"
 
 
       - name: Import SQL File
