@@ -32,7 +32,4 @@ jobs:
         
       - name: secret_key
         run: setx API_KEY ${{ secrets.API_KEY }}
-        
-      - name: Deploy SQL files
-        run: |
-          Get-Content C:\laragon\www\studio4-chatbot-project\pet-food-store\11.sql | mysql -h localhost -u root
+     
