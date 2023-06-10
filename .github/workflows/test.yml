@@ -1,0 +1,27 @@
+name: Create Database
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create-database:
+    runs-on: self-hosted
+
+    steps:
+      - name: Set up MySQL
+        uses: mysql-actions/setup-mysql@v1
+        with:
+          mysql-version: '8.0'
+          mysql-host: ${{ secrets.MYSQL_HOST }}
+          mysql-port: ${{ secrets.MYSQL_PORT }}
+          mysql-root-password: ${{ secrets.MYSQL_ROOT_PASSWORD }}
+
+      - name: Create Database
+        run: |
+          mysql -h ${{ secrets.MYSQL_HOST }} -P ${{ secrets.MYSQL_PORT }} -u root -p"${{ secrets.MYSQL_ROOT_PASSWORD }}" -e "CREATE DATABASE pet-store-project;"
+
+      - name: Import SQL File
+        run: |
+          mysql -h ${{ secrets.MYSQL_HOST }} -P ${{ secrets.MYSQL_PORT }} -u root -p"${{ secrets.MYSQL_ROOT_PASSWORD }}" pet-store-project < C:\laragon\www\studio4-chatbot-project\pet-food-store\11.sql
