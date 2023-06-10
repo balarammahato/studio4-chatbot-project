@@ -12,16 +12,13 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-        with:
-          repository: balarammahato/studio4-chatbot-project
-          path: repo
         
       - name: Check if folder exists
         run: |
           if (Test-Path -Path "C:\laragon\www\studio4-chatbot-project" -PathType Container) {  Remove-Item -Path "C:\laragon\www\studio4-chatbot-project"   -Recurse -Force}
 
       - name: Deploy to Local
-        run: cp -r C:\laragon\www\
+        run: cp -r ${{ github.workspace }} C:\laragon\www\studio4-chatbot-project
         
       - name: Deploy SQL files
         run: |
