@@ -20,8 +20,8 @@ jobs:
 
       - name: Create Database
         run: |
-          C:\Program Files\MySQL -h ${{ secrets.MYSQL_HOST }} -P ${{ secrets.MYSQL_PORT }} -u root -p"${{ secrets.MYSQL_ROOT_PASSWORD }}" -e "CREATE DATABASE pet-store-project;"
+          C:\Program Files\MySQL\MySQL -h ${{ secrets.MYSQL_HOST }} -P ${{ secrets.MYSQL_PORT }} -u root -p"${{ secrets.MYSQL_ROOT_PASSWORD }}" -e "CREATE DATABASE pet-store-project;"
 
       - name: Import SQL File
         run: |
-          C:\Program Files\MySQL -h ${{ secrets.MYSQL_HOST }} -P ${{ secrets.MYSQL_PORT }} -u root -p"${{ secrets.MYSQL_ROOT_PASSWORD }}" pet-store-project < C:/laragon/www/studio4-chatbot-project/pet-food-store/11.sql
+          C:\Program Files\MySQL\MySQL -h ${{ secrets.MYSQL_HOST }} -P ${{ secrets.MYSQL_PORT }} -u root -p"${{ secrets.MYSQL_ROOT_PASSWORD }}" pet-store-project < C:/laragon/www/studio4-chatbot-project/pet-food-store/11.sql
