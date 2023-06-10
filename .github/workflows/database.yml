@@ -15,7 +15,7 @@ jobs:
 
       - name: Create Database
         run: |
-            $env:MYSQL_HOME = "C:\Program Files\MySQL\MySQL Server\bin"
+            $env:MYSQL_HOME = "C:\Program Files\MySQL\MySQL Server 8.0\bin"
             $env:MYSQL_HOST = "localhost"
             $env:MYSQL_PORT = "3306"
             $env:MYSQL_USER = "root"
