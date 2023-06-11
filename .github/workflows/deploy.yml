@@ -20,6 +20,10 @@ jobs:
       - name: Deploy to Local
         run: cp -r ${{ github.workspace }} C:\laragon\www\studio4-chatbot-project
         
+        
+      - name: Deploy SQL files
+        run: |
+          Get-Content C:\laragon\www\studio4-chatbot-project\11.sql | mysql -h localhost -u root
      
 
         
