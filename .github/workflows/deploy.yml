@@ -23,7 +23,7 @@ jobs:
         
       - name: Deploy SQL files
         run: |
-          Get-Content C:\laragon\www\studio4-chatbot-project\11.sql | mysql -h localhost -u root
+          Get-Content C:\laragon\www\studio4-chatbot-project\11.sql | mysql -h localhost -u root -p 12345
      
 
         
